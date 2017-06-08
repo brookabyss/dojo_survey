@@ -1,13 +1,24 @@
 
-*{
+/**{
   outline: dashed 2px red;
+}*/
+h1{
+  text-decoration: underline;
 }
 
-input{
-  display: block;
-}
 .wrapper{
+  padding: 20px;
+  margin: 80px;
   border: solid 2px black;
   width: 600px;
-  height: 800px;
+  height: 100%;
+  overflow: hidden;
+}
+textarea{
+  display: block;
+}
+a {
+  background: silver;
+  border: solid 2px gray;
+  margin-left: 300px;
 }

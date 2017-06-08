@@ -11,6 +11,7 @@ def create_user():
     session["location"]=request.form["location"]
     session["language"]=request.form["language"]
     session["location"]=request.form["location"]
+    session["comment"]=request.form["comment"]
     print session["name"]
     return redirect('/result')
 
