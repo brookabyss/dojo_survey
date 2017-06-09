@@ -10,11 +10,12 @@ def create_user():
     key_names=['name','location','language','comment']
     error_message="The {} field can't be empty"
     error=0
+    if len(request.form['comment'])> 120:
+        error+=1
+        flash("Comment can't be longer than 120 characters")
     for k in key_names:
 
         session[k]=request.form[k]
-        # if k not in session:
-        #     session[k]=""
         if len(request.form[k])<1 and k != "comment":
             error+=1
             flash(error_message.format(k))
