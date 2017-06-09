@@ -13,6 +13,7 @@
         <div class="location">
           <label for="location">Dojo location: </label>
           <select name="location">
+                <option value="">None</option>
                 <option value="Seattle">Seattle</option>
                 <option value="New York">New York</option>
                 <option value="San Jose">San Jose</option>
@@ -23,17 +24,25 @@
         <div class="language">
           <label for="language">Favorite Language: </label>
           <select name="language">
-                <option value="python">Python</option>
-                <option value="ruby">Ruby</option>
-                <option value="javascript">Javascript</option>
-                <option value="c++">C++</option>
-                <option value="html5">HTML5</option>
-                <option value="css3">CSS3</option>
+                <option value="">None</option>
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Javascript">Javascript</option>
+                <option value="C++">C++</option>
+                <option value="HTML5">HTML5</option>
+                <option value="CSS3">CSS3</option>
           </select>
         </div>
         <label for="comment">Comment (optional):</label>
         <textarea name="comment" rows="8" cols="80"></textarea>
         <input type="submit" name="submit" value="Submit">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
       </form>
     </div>
   </body>
